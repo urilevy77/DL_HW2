@@ -1,0 +1,30 @@
+Assignment 2/
+│
+├── 📁 data/
+│   └── 📁 lfw/                  # התיקייה אליה תחלץ את ה-LFW Dataset המקורי
+│
+├── 📁 src/
+│   ├── 📁 models/
+│   │   ├── __init__.py
+│   │   └── siamese_main.py      # הקובץ הקריטי: מכיל את ResNet18+50, מנגנון ה-Attention וה-Soft Gating
+│   │
+│   ├── 📁 data/
+│   │   ├── __init__.py
+│   │   ├── lfw_dataset.py       # טוען תמונות, מבצע Resize (במקום MTCNN), ומייצר זוגות 0/1
+│   │   └── transforms.py        # הגדרות אוגמנטציה ונרמול (Normalize)
+│   │
+│   └── 📁 utils/
+│       ├── __init__.py
+│       ├── metrics.py           # פונקציות לחישוב דיוק (Accuracy)
+│       └── visualization.py     # פונקציות להצגת מפות הקשב (Heatmaps) בדוח
+│
+├── 📁 checkpoints/              # כאן יישמרו קבצי ה-model.pth באופן אוטומטי
+│
+├── 📁 logs/                     # כאן יישמרו נתוני ה-TensorBoard
+│
+├── config.yaml                  # קובץ הגדרות מרוכז (Batch size, LR, Threshold)
+├── train.py                     # סקריפט האימון הראשי (כולל BCE Loss Loop)
+├── predict.py                   # סקריפט להרצת בדיקה על זוג תמונות בודד (עבור הדגמה)
+├── evaluate.py                  # סקריפט למדידת ביצועים על כל ה-Test Set
+├── requirements.txt             # רשימת התקנות (torch, torchvision, tensorboard, etc.)
+└── README.md                    # הסבר על הפרויקט והוראות הרצה
