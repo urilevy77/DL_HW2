@@ -1,0 +1,19 @@
+# Hyperparameters & Configuration
+batch_size: 64
+learning_rate: 0.00005
+num_epochs: 15
+weight_decay: 0.00001 # Regularization
+
+# Data
+dataset_path: "data/lfw-deepfunneled/lfw-deepfunneled" # Path to the extracted LFW dataset
+train_split_ratio: 0.8 # Fraction of people used for training
+
+# Model
+input_shape: [224, 224]
+embedding_dim: 1 # Dimension of the final distance output (before sigmoid)
+dropout_prob: 0.1 # Dropout probability for regularization
+unfreeze_epoch: 5 # Epoch to unfreeze backbone
+
+# Paths
+checkpoint_dir: "checkpoints"
+log_dir: "logs"

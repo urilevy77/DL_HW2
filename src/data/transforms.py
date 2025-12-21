@@ -5,19 +5,19 @@ from torchvision import transforms
 IMAGENET_MEAN = [0.485, 0.456, 0.406]
 IMAGENET_STD  = [0.229, 0.224, 0.225]
 
-def get_transforms(split='train'):
+def get_transforms(split='train', input_size=(224, 224)):
     """
     מחזיר את אובייקט הטרנספורמציות המתאים (לאימון או לבדיקה).
     
     Args:
         split (str): 'train' או 'val'/'test'
+        input_size (tuple): גודל התמונה רצוי (W, H)
     """
     
     # טרנספורמציות בסיסיות שקורות תמיד (גם באימון וגם בטסט)
     base_transforms = [
-        # שינוי גודל ל-224x224 (הגודל הסטנדרטי ל-ResNet)
-        # מכיוון שוויתרנו על MTCNN, אנחנו חייבים לוודא שהתמונה בגודל אחיד כאן.
-        transforms.Resize((224, 224)),
+        # שינוי גודל 
+        transforms.Resize(input_size),
         
         # המרה לטנסור (הופך ל-Float בין 0 ל-1, ומסדר את הערוצים ל-[C, H, W])
         transforms.ToTensor(),
