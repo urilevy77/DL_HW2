@@ -1,0 +1,10 @@
+{
+  "n_way": 10,
+  "n_trials": 100,
+  "correct": 8,
+  "accuracy": 8.0,
+  "random_baseline": 10.0,
+  "trial_summary": [
+    {
+      "trial_idx": 0,
+      "correct": 

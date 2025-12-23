@@ -7,3 +7,5 @@ matplotlib
 numpy
 pillow
 scikit-learn
+pandas
+seaborn
